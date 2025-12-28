@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@fontsource/space-grotesk/400.css";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+
+/* Token Voting Design System - Dark Crypto Aesthetic */
+
+@layer base {
+  :root {
+    --background: 230 25% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 20% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 22% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 230 15% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 230 15% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 271 81% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 330 81% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 15% 20%;
+    --input: 230 15% 18%;
+    --ring: 271 81% 56%;
+
+    --radius: 0.75rem;
+
+    /* Custom voting colors */
+    --vote-yes: 142 71% 45%;
+    --vote-yes-glow: 142 71% 55%;
+    --vote-no: 330 81% 60%;
+    --vote-no-glow: 320 80% 55%;
+    --link: 271 81% 66%;
+
+    /* Gradients */
+    --gradient-no: linear-gradient(135deg, hsl(330, 81%, 60%), hsl(280, 70%, 50%));
+    --gradient-card: linear-gradient(180deg, hsl(230, 20%, 14%) 0%, hsl(230, 20%, 10%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(271, 81%, 56%, 0.15) 0%, transparent 70%);
+
+    --sidebar-background: 230 20% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 142 71% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 15% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 230 15% 20%;
+    --sidebar-ring: 271 81% 56%;
+  }
+
+  .dark {
+    --background: 230 25% 7%;
+    --foreground: 210 40% 98%;
+    --card: 230 20% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 230 22% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 230 15% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 230 15% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 271 81% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 330 81% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 230 15% 20%;
+    --input: 230 15% 18%;
+    --ring: 271 81% 56%;
+    --sidebar-background: 230 20% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 142 71% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 15% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 230 15% 20%;
+    --sidebar-ring: 271 81% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-xl;
+  }
+
+  .glow-green {
+    box-shadow: 0 0 30px hsl(var(--vote-yes) / 0.3);
+  }
+
+  .glow-pink {
+    box-shadow: 0 0 30px hsl(var(--vote-no) / 0.3);
+  }
+}
